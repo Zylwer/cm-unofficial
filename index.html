@@ -8,10 +8,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --bg: #0e0e15;
-      --glass: rgba(255, 255, 255, 0.06);
-      --accent: #ffcc33;
+      --bg-gradient: linear-gradient(135deg, #1b1b2f, #2a2a44);
+      --glass: rgba(255, 255, 255, 0.15);
+      --accent: #ffdd33;
+      --accent-hover: #ffee66;
       --text: #ffffff;
+      --subtext: #e0e0e0;
     }
 
     * {
@@ -21,10 +23,11 @@
     }
 
     body {
-      background: var(--bg);
-      font-family: 'Inter', sans-serif;
+      background: var(--bg-gradient);
       color: var(--text);
+      font-family: 'Inter', sans-serif;
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     header {
@@ -33,16 +36,16 @@
       align-items: center;
       padding: 20px 40px;
       background: var(--glass);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(14px);
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 0 12px rgba(255, 204, 51, 0.1);
+      box-shadow: 0 0 16px rgba(255, 221, 51, 0.2);
     }
 
     .logo {
       font-family: 'Poppins', sans-serif;
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       color: var(--accent);
       font-weight: 700;
     }
@@ -52,7 +55,6 @@
       margin-left: 25px;
       text-decoration: none;
       font-weight: 600;
-      font-family: 'Inter', sans-serif;
       transition: color 0.3s;
     }
 
@@ -66,31 +68,32 @@
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: 3.2rem;
       margin-bottom: 20px;
       font-family: 'Poppins', sans-serif;
     }
 
     .hero p {
-      font-size: 1.2rem;
-      color: #cccccc;
+      font-size: 1.25rem;
+      color: var(--subtext);
       margin-bottom: 40px;
     }
 
     .btn-primary {
       padding: 14px 34px;
       background: var(--accent);
-      color: var(--bg);
+      color: #111;
       border: none;
       border-radius: 10px;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.3s;
       font-family: 'Inter', sans-serif;
-      box-shadow: 0 0 10px rgba(255, 204, 51, 0.3);
+      box-shadow: 0 0 14px rgba(255, 221, 51, 0.5);
+      transition: all 0.3s;
     }
 
     .btn-primary:hover {
+      background: var(--accent-hover);
       transform: scale(1.05);
     }
 
@@ -100,7 +103,7 @@
 
     h2.section-title {
       text-align: center;
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       color: var(--accent);
       margin-bottom: 40px;
       font-family: 'Poppins', sans-serif;
@@ -115,17 +118,19 @@
 
     .feature-card, .download-card {
       background: var(--glass);
-      backdrop-filter: blur(14px);
+      backdrop-filter: blur(18px);
       padding: 30px;
-      border-radius: 16px;
+      border-radius: 18px;
       width: 280px;
       text-align: center;
-      box-shadow: 0 0 25px rgba(255, 204, 51, 0.05);
-      transition: transform 0.3s;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .feature-card:hover, .download-card:hover {
       transform: translateY(-8px);
+      box-shadow: 0 0 30px rgba(255, 221, 51, 0.25);
     }
 
     .feature-card i, .download-card i {
@@ -141,8 +146,8 @@
     }
 
     .feature-card p {
-      font-size: 0.95rem;
-      color: #ccc;
+      font-size: 1rem;
+      color: var(--subtext);
     }
 
     .download-card a {
@@ -150,23 +155,22 @@
       margin-top: 15px;
       padding: 10px;
       background: var(--accent);
-      color: var(--bg);
+      color: #111;
       border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
-      font-family: 'Inter', sans-serif;
       transition: background 0.3s;
     }
 
     .download-card a:hover {
-      background: #ffd84d;
+      background: var(--accent-hover);
     }
 
     footer {
       text-align: center;
       padding: 30px 20px;
       font-size: 0.9rem;
-      color: #888;
+      color: #bbb;
       background: var(--glass);
       backdrop-filter: blur(10px);
       margin-top: 60px;
@@ -174,7 +178,7 @@
 
     @media (max-width: 768px) {
       .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
       }
 
       .feature-card, .download-card {
@@ -207,7 +211,7 @@
 
   <section class="hero">
     <h1>Play Smarter. Feel Better.</h1>
-    <p>A sleek, powerful Minecraft launcher with built-in mods, performance boosts & customization.</p>
+    <p>Lightweight client with built-in mods, boosted visuals, and full customization.</p>
     <button class="btn-primary">Download Now</button>
   </section>
 
@@ -216,18 +220,18 @@
     <div class="feature-container">
       <div class="feature-card">
         <i class="fas fa-bolt"></i>
-        <h3>Optimized Performance</h3>
-        <p>Lightweight and efficient. Enjoy a smoother Minecraft experience on any system.</p>
+        <h3>High Performance</h3>
+        <p>Boost your FPS and reduce lag with optimized rendering and performance tweaks.</p>
       </div>
       <div class="feature-card">
-        <i class="fas fa-swatchbook"></i>
-        <h3>Custom Cosmetics</h3>
-        <p>Personalize your look with built-in cosmetics and emotes.</p>
+        <i class="fas fa-tshirt"></i>
+        <h3>Free Cosmetics</h3>
+        <p>Apply free capes, wings, bandanas, and more to personalize your look.</p>
       </div>
       <div class="feature-card">
         <i class="fas fa-cogs"></i>
         <h3>50+ Built-in Mods</h3>
-        <p>All your favorite utilities and visual tweaks in one launcher.</p>
+        <p>Toggle HUDs, animations, and enhancements without installing extra files.</p>
       </div>
     </div>
   </section>
@@ -256,7 +260,7 @@
   <section id="store">
     <h2 class="section-title">Visit Our Store</h2>
     <div style="text-align: center;">
-      <p style="color:#bbb; font-size:1rem;">Unlock exclusive cosmetics and upgrades inside the CM Client Store.</p>
+      <p style="color:var(--subtext); font-size:1rem;">Unlock exclusive cosmetics and styles in the CM Marketplace.</p>
       <button class="btn-primary" style="margin-top: 20px;">Go to Store</button>
     </div>
   </section>
