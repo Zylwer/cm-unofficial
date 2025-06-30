@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CM Client</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #0e0e15;
+      --glass: rgba(255, 255, 255, 0.06);
+      --accent: #ffcc33;
+      --text: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: var(--glass);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 0 12px rgba(255, 204, 51, 0.1);
+    }
+
+    .logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    nav a {
+      color: var(--text);
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 30px 80px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #cccccc;
+      margin-bottom: 40px;
+    }
+
+    .btn-primary {
+      padding: 14px 34px;
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: 'Inter', sans-serif;
+      box-shadow: 0 0 10px rgba(255, 204, 51, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+    }
+
+    section {
+      padding: 60px 30px;
+    }
+
+    h2.section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      color: var(--accent);
+      margin-bottom: 40px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .feature-container, .download-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+    }
+
+    .feature-card, .download-card {
+      background: var(--glass);
+      backdrop-filter: blur(14px);
+      padding: 30px;
+      border-radius: 16px;
+      width: 280px;
+      text-align: center;
+      box-shadow: 0 0 25px rgba(255, 204, 51, 0.05);
+      transition: transform 0.3s;
+    }
+
+    .feature-card:hover, .download-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .feature-card i, .download-card i {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+
+    .feature-card h3, .download-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+
+    .download-card a {
+      display: block;
+      margin-top: 15px;
+      padding: 10px;
+      background: var(--accent);
+      color: var(--bg);
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.3s;
+    }
+
+    .download-card a:hover {
+      background: #ffd84d;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+      color: #888;
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .feature-card, .download-card {
+        width: 90%;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      nav a {
+        margin: 8px 12px;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">CM Client</div>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#downloads">Download</a>
+      <a href="#store">Store</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Play Smarter. Feel Better.</h1>
+    <p>A sleek, powerful Minecraft launcher with built-in mods, performance boosts & customization.</p>
+    <button class="btn-primary">Download Now</button>
+  </section>
+
+  <section id="features">
+    <h2 class="section-title">Core Features</h2>
+    <div class="feature-container">
+      <div class="feature-card">
+        <i class="fas fa-bolt"></i>
+        <h3>Optimized Performance</h3>
+        <p>Lightweight and efficient. Enjoy a smoother Minecraft experience on any system.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-swatchbook"></i>
+        <h3>Custom Cosmetics</h3>
+        <p>Personalize your look with built-in cosmetics and emotes.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-cogs"></i>
+        <h3>50+ Built-in Mods</h3>
+        <p>All your favorite utilities and visual tweaks in one launcher.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="downloads">
+    <h2 class="section-title">Download CM Client</h2>
+    <div class="download-list">
+      <div class="download-card">
+        <i class="fas fa-windows"></i>
+        <h3>Windows (64-bit)</h3>
+        <a href="#">Download .exe</a>
+      </div>
+      <div class="download-card">
+        <i class="fas fa-linux"></i>
+        <h3>Linux</h3>
+        <a href="#">Download .AppImage</a>
+      </div>
+      <div class="download-card">
+        <i class="fas fa-archive"></i>
+        <h3>Universal ZIP</h3>
+        <a href="#">Download .zip</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="store">
+    <h2 class="section-title">Visit Our Store</h2>
+    <div style="text-align: center;">
+      <p style="color:#bbb; font-size:1rem;">Unlock exclusive cosmetics and upgrades inside the CM Client Store.</p>
+      <button class="btn-primary" style="margin-top: 20px;">Go to Store</button>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 CM Client. All rights reserved.
+  </footer>
+
+</body>
+</html>
